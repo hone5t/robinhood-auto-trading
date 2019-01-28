@@ -1,0 +1,36 @@
+robinhood:
+  user: your-user-name
+  password: your-password-here
+stock:
+  AMD:
+    # how many of this stock should i have
+    position: 1
+    # what price the sell order should be for
+    target-profit: 1
+    # how much differenc from the open stock price for you to buy
+    price-target: -1
+    # mid price
+    median-price: 21
+    # prevent day trading
+    can_sell_today: False
+
+  TWTR:
+    position: 1
+    target-profit: 0.2
+    price-target: -0.2
+    median-price: 31
+    can_sell_today: False
+
+  T:
+    position: 1
+    target-profit: 0.2
+    price-target: -0.2
+    median-price: 30.7
+    can_sell_today: False
+
+  F:
+    position: 5
+    target-profit: 0.1
+    price-target: -0.1
+    median-price: 8.5
+    can_sell_today: False

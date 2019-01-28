@@ -1,0 +1,8 @@
+certifi==2018.11.29
+chardet==3.0.4
+idna==2.6
+python-dateutil==2.7.5
+requests==2.18.4
+Robinhood==1.0.1
+six==1.11.0
+urllib3==1.22
