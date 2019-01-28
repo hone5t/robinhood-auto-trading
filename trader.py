@@ -34,7 +34,6 @@ class Trader:
                     s['amount_owned'] = float(stock.get('quantity'))
                     s['purchase_price'] = float(stock.get('pending_average_buy_price'))
                     s['sell_price'] = float(s['purchase_price']) + float(s.get('target-profit'))
-                    pdb.set_trace()
                     break
                 else :
                     s['amount_owned'] = 0
@@ -48,7 +47,6 @@ class Trader:
     def create_buy_order(self, stock):
         qty = stock.get('position')  - stock.get('amount_owned')
         if qty > 0:
-            pdb.set_trace()
             stock['order'] = self.client.place_limit_buy_order(
                               None,
                               stock.get('symobl'),
