@@ -5,13 +5,14 @@ import pdb
 import time
 
 class Trader:
-    def __init__(self):
+    def __init__(self, enable_day_trade = False):
         cfg = self.get_config()
         self.user_name = cfg.get('robinhood').get('user')
         self.password = cfg.get('robinhood').get('password')
         self.client = Robinhood()
         self.client.login(username=self.user_name, password = self.password)
         self.stock_list = self.get_stock_list(cfg.get('stock'))
+        self.enable_day_trade = enable_day_trade
         self.stock_owned()
 
     def get_stock_list(self, stock_dict):
@@ -79,7 +80,7 @@ class Trader:
         for stock in self.stock_list:
             if stock.get('amount_owned') == 0 :
                 #prevent day tradding
-                stock['can_sell_today'] = False
+                stock['can_sell_today'] = self.can_sell_today
                 self.create_buy_order(stock)
                 stock['amount_owned'] = stock.get('position')
             else:
