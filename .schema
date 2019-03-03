@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS active_trade(
+    id INT PRIMARY KEY NOT NULL,
+    order_id varchar(60)  NOT NULL,
+    dt DATE NOT NULL,
+    stock TEXT NOT NULL,
+    price DECIMAL(10,5) NOT NULL,
+    amount INT NOT NULL,
+    done BOOLEAN NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS trades(
+    id INT PRIMARY KEY NOT NULL,
+    order_id varchar(60)  NOT NULL,
+    dt DATE NOT NULL,
+    stock TEXT NOT NULL,
+    price DECIMAL(10,5) NOT NULL,
+    amount INT NOT NULL,
+    total DECIMAL(12,5) NOT NULL,
+    sold_for DECIMAL(10,5) ,
+    sold_for_total DECIMAL(10,5),
+    sold_date DATE,
+    profit DECIMAL(10,5)
+);
